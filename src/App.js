@@ -1,16 +1,166 @@
-import React, {Fragment} from "react";
-import Navbar from "./Components/Navbar";
-import Content from "./Components/Content";
-import Description from "./Components/Description";
-import Email from "./Components/Email";
-import image from './Assets/Birthday-01.png'
+import React, { useState, useEffect } from "react";
+import useSound from "use-sound";
+import Footer from "./Components/Footer";
+import Header from "./Components/Header";
+import { messages } from "./arrayList";
+import MessageItem from "./Components/MessageItem";
+import confetti from "canvas-confetti";
+import coverImage from './Assets/Salome-01.png';
+import coverImageDark from './Assets/Salome-02.png';
+import boImage from './Assets/tst,small,507x507-pad,600x600,f8f8f8-Photoroom.png'
+import sound from './Assets/Airhorn.mp3'
+import { Dialog, DialogBody, DialogHeader } from "@material-tailwind/react";
+import { use } from "react";
+import { ChevronLeftIcon, ChevronRightIcon, XMarkIcon } from "@heroicons/react/24/outline";
+
+
+
 
 function App() {
+
+  const [day, setDay] = useState(true);
+  const [disable, setDisable] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [size, setSize] = useState(null);
+  const [message, setMessage] = useState('');
+  const [name, setName] = useState('')
+
+  const [playSound] = useSound(sound);
+
+  var count = 200;
+  var defaults = {
+    origin: { y: 0.7 }
+  };
+
+  function fire(particleRatio, opts) {
+    confetti({
+      ...defaults,
+      ...opts,
+      particleCount: Math.floor(count * particleRatio)
+    });
+  }
+
+  const shootConfetti = () => {
+    setDisable(true)
+    fire(0.25, {
+      spread: 26,
+      startVelocity: 55,
+    });
+    fire(0.2, {
+      spread: 60,
+    });
+    fire(0.35, {
+      spread: 100,
+      decay: 0.91,
+      scalar: 0.8
+    });
+    fire(0.1, {
+      spread: 120,
+      startVelocity: 25,
+      decay: 0.92,
+      scalar: 1.2
+    });
+    fire(0.1, {
+      spread: 120,
+      startVelocity: 45,
+    });
+    playSound()
+    setTimeout(() => {
+      setDisable(false)
+    }, 7000)
+  }
+
+  const handleOpen = () => {
+    setOpen(true)
+  }
+
+  const handleClose = () => {
+    setSize(null)
+    setMessage('')
+    setName('')
+    setOpen(false)
+  }
+
+  const openModal = (modalSize, selectedMessage, selectedName) => {
+    setSize(modalSize)
+    setMessage(selectedMessage)
+    setName(selectedName)
+    setOpen(true)
+  }
+
+
   return (
-    <Fragment className="overscroll-none bg-red-300">
-      <div className="w-screen h-screen bg-cover bg-center bg-[url('./Assets/Birthday-01.png')] overscroll-none border-none"></div>
-      <div className="w-screen h-screen bg-[#cee5f0] overscroll-none border-none"></div>
-    </Fragment>
+    <div className="relative w-screen h-screen overflow-scroll">
+
+      <Dialog className={`${day ? 'bg-[#cee5f0]' : 'bg-[#283038]'}`} open={open} handler={handleOpen}>
+        <DialogHeader>
+          <div className="w-full h-10">
+            <button onClick={handleClose} className={`absolute w-10 h-10 text-lg p-1 right-1 ${day ? 'text-gray-900' : 'text-gray-50'}`}>
+              <XMarkIcon />
+            </button>
+          </div>
+        </DialogHeader>
+        <DialogBody>
+          <div className="w-full h-72 md:h-80 flex flex-row">
+            <div className={`relative w-full h-72 md:h-80 flex flex-col pt-4 px-4 text-left space-y-4 cursor-pointer ${day ? 'text-gray-900' : 'text-gray-50'}`}>
+              <div className="w-full h-[90%] overflow-scroll">
+                <p className='text-sm md:text-base mt-1'>{message}</p>
+              </div>
+              <div className="w-full h-[10%]">
+                <p className='text-xs md:text-sm message mt-2'>{`From ${name}`}</p>
+              </div>
+            </div>
+          </div>
+        </DialogBody>
+      </Dialog>
+
+      <div style={{ transition: 'background-image 1s' }} className={`relative flex flex-col ${day ? 'bg-[url("./Assets/Birthday-01.png")]' : 'bg-[url("./Assets/Birthday-02.png")]'} relative w-screen h-screen pt-5 px-4 bg-center bg-cover`}>
+
+        <div className="relative w-full h-[30%]">
+
+          <Header day={day} setDay={() => setDay(!day)} />
+
+          <button onClick={shootConfetti} disabled={disable} className="relative w-48 h-24 mx-auto mt-28 md:mt-24 flex flex-row bg-green-500 rounded-lg border-2 border-gray-50 cursor-pointer hover:shadow-md">
+            <div className="relative h-full aspect-square bg-[url(./Assets/tst,small,507x507-pad,600x600,f8f8f8-Photoroom.png)] bg-cover"></div>
+            <p className="relative confetti-button-text text-2xl mt-7">Click me!</p>
+          </button>
+
+        </div>
+
+        <audio id="audio_tag" src={sound} />
+
+        <div className="relative w-full h-[70%]">
+
+          <div style={{ transition: 'background-image 1s' }} className={`absolute w-full h-full left-0 aspect-portrait md:aspect-square md:w-3/4 md:left-[12.5%] lg:w-[50%] lg:left-[25%] xl:w-[40%] xl:left-[30%] bottom-0 bg-center bg-contain bg-no-repeat ${day ? 'bg-[url("./Assets/Salome-01.png")]' : 'bg-[url("./Assets/Salome-02.png")]'}`}>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div className={`relative w-screen h-auto ${day ? 'bg-[#cee5f0]' : 'bg-[#283038]'} border-none`}>
+
+        <div className={`w-full md:w-4/5 lg:w-3/5 h-full mx-auto py-2 ${day ? 'text-gray-900' : 'text-gray-50'}`}>
+
+          <div className="w-full p-4">
+            <p className="mt-20 text-lg justify-start">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            </p>
+          </div>
+
+          <div className="w-full h-auto mt-20 relative grid grid-flow-row-dense grid-cols-2 md:grid-cols-3">
+            {messages.map((item) => (
+              <MessageItem openModal={() => openModal('xs', item.message, item.first_name)} key={item.id} message={item.message} name={item.first_name} />
+            ))}
+          </div>
+
+        </div>
+
+      </div>
+
+      <Footer day={day} />
+
+    </div>
   );
 }
 
