@@ -58,20 +58,5 @@ export const messages = [
         "id": 12,
         "first_name": "Swagg",
         "message": "Happy birthday Salsa. It’s been 20 plus years deep of friendship and nothing but love. I appreciate and love you sis. To more years of friendship and more life. One 1️⃣"
-    },
-    {
-        "id": 13,
-        "first_name": "Philly",
-        "message": "The quick brown fox jumps over the lazy dog."
-    },
-    {
-        "id": 14,
-        "first_name": "Alvin",
-        "message": "The quick brown fox jumps over the lazy dog."
-    },
-    {
-        "id": 15,
-        "first_name": "Karil",
-        "message": "The quick brown fox jumps over the lazy dog."
     }
 ]
