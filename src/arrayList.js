@@ -21,7 +21,7 @@ export const messages = [
     },
     {
         "id": 5,
-        "first_name": "Terri-jo",
+        "first_name": "Wame",
         "message": "The quick brown fox jumps over the lazy dog."
     },
     {
@@ -46,18 +46,18 @@ export const messages = [
     },
     {
         "id": 10,
-        "first_name": "Paddie",
-        "message": "The quick brown fox jumps over the lazy dog."
+        "first_name": "Wame",
+        "message": "To the best friend a person could ask for🥂Happy birthday baby❤️and don't worry, they are not gray hairs, they are wisdom highlights( believe me I know what I’m talking about😂)"
     },
     {
         "id": 11,
-        "first_name": "Hulda",
-        "message": "The quick brown fox jumps over the lazy dog."
+        "first_name": "Phile",
+        "message": "May the year ahead bring everything you've been working toward! Happy birthday!"
     },
     {
         "id": 12,
-        "first_name": "Garek",
-        "message": "The quick brown fox jumps over the lazy dog."
+        "first_name": "Swagg",
+        "message": "Happy birthday Salsa. It’s been 20 plus years deep of friendship and nothing but love. I appreciate and love you sis. To more years of friendship and more life. One 1️⃣"
     },
     {
         "id": 13,
