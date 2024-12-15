@@ -12,7 +12,7 @@ export const messages = [
     {
         "id": 3,
         "first_name": "K1",
-        "message": "Happy Birthday Salzz. Keep doing you, keep being the great person that ypou are and here's to many more years."
+        "message": "Happy Birthday Salzz. Keep doing you, keep being the great person that you are and here's to many more years."
     },
     {
         "id": 4,
@@ -22,7 +22,7 @@ export const messages = [
     {
         "id": 5,
         "first_name": "Wame",
-        "message": "The quick brown fox jumps over the lazy dog."
+        "message": "To the best friend a person could ask for🥂Happy birthday baby❤️and don't worry, they are not gray hairs, they are wisdom highlights( believe me I know what I’m talking about😂)."
     },
     {
         "id": 6,
@@ -58,5 +58,25 @@ export const messages = [
         "id": 12,
         "first_name": "Swagg",
         "message": "Happy birthday Salsa. It’s been 20 plus years deep of friendship and nothing but love. I appreciate and love you sis. To more years of friendship and more life. One 1️⃣"
+    },
+    {
+        "id": 13,
+        "first_name": "Munashe",
+        "message": "May the year ahead bring everything you've been working toward! Happy birthday!"
+    },
+    {
+        "id": 14,
+        "first_name": "Ore",
+        "message": "Getting to know you has been a true pleasure. I couldn't have asked for a better addition to our family. Love you so much and wish you an amazingly joyfully wondrous happy birthday!!"
+    },
+    {
+        "id": 15,
+        "first_name": "Kaone",
+        "message": "Happy Birthday Sally Salzz! Today, I want to celebrate the incredible person you are!  You are ore one of the best people i know, from the laughter we’ve shared to the quiet moments of understanding,you have always been a shining light to everyone around you. I can’t help but feel so incredibly lucky to know you for all these years as we transition through all the stages of life. Here’s to another year of growth, adventure, and making unforgettable memories together. I hope this year brings you all the happiness and peace you deserve and more. Happy Birthday, my friend🩷"
+    },
+    {
+        "id": 16,
+        "first_name": "Precious",
+        "message": "Happy Birthday Sally from the valley ❤️❤️youre one of the most wonderful souls I know! I am so grateful for all the moments  and the memories we have shared. Your unending support carried me through years of torture (BAF 200) and for that im forever grateful.Here’s to celebrating you today and always! Wishing you a year filled with love, joy, and all the good things life has to offer."
     }
 ]

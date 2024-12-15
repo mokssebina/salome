@@ -90,7 +90,7 @@ function App() {
 
 
   return (
-    <div className="relative w-screen h-screen overflow-scroll">
+    <div className={`relative w-screen h-screen overflow-scroll ${day ? 'bg-[#cee5f0]' : 'bg-[#283038]'}`}>
 
       <Dialog className={`${day ? 'bg-[#cee5f0]' : 'bg-[#283038]'}`} open={open} handler={handleOpen}>
         <DialogHeader>
@@ -144,7 +144,7 @@ function App() {
 
           <div className="w-full p-4">
             <p className="mt-20 text-lg justify-start">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+              Happy Birthday my love. Grace is defined as undeserved favour. It is not earned and is freely given. Having you in my life and to be loved by you is the perfect example of grace in my life. You're important to so many people and few signed your card to show you how much they care. Keep scrollinh to see...
             </p>
           </div>
 
