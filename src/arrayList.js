@@ -41,7 +41,7 @@ export const messages = [
     },
     {
         "id": 9,
-        "first_name": "With love Amu",
+        "first_name": "Amu",
         "message": "Happy Birthday, Salome🎉. Today, we celebrate the wonderful person you are—kind, resilient, and inspiring. I pray that this new year of life brings you abundant joy, peace, and endless opportunities to thrive in every aspect of your life. May God’s blessings overflow in all you do, guiding you toward your dreams and surrounding you with love and favor. You deserve nothing but the best, and I know this year will hold amazing things for you. Cheers to another beautiful chapter! 🥂"
     },
     {
