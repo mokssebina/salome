@@ -116,35 +116,41 @@ function App() {
         </DialogBody>
       </Dialog>
 
-      <div style={{ transition: 'background-image 1s' }} className={`relative flex flex-col ${day ? 'bg-[url("./Assets/Birthday-01.png")]' : 'bg-[url("./Assets/Birthday-02.png")]'} relative w-screen h-screen pt-5 px-4 bg-center bg-cover`}>
+      <div style={{ transition: 'background-image 1s' }} className={`relative w-screen h-screen bg-center bg-cover`}>
 
-        <div className="relative w-full h-[30%]">
+        <img className="w-full h-full object-cover" src={`${day ? light : dark}`} />
 
-          <Header day={day} setDay={() => setDay(!day)} />
+        <div className="absolute z-10 top-0 pt-5 w-full h-full flex flex-col">
 
-          <button onClick={shootConfetti} disabled={disable} className="relative w-48 h-24 mx-auto mt-28 md:mt-24 flex flex-row bg-green-500 rounded-lg border-2 border-gray-50 cursor-pointer hover:shadow-md">
-            
-            <div className="relative h-full aspect-square">
+          <div className="relative w-full h-[30%]">
 
-              <img className="w-full h-full object-cover" src={boImage} />
+            <Header day={day} setDay={() => setDay(!day)} />
+
+            <button onClick={shootConfetti} disabled={disable} className="relative w-48 h-24 mx-auto mt-28 md:mt-24 flex flex-row bg-green-500 rounded-lg border-2 border-gray-50 cursor-pointer hover:shadow-md">
+
+              <div className="relative h-full aspect-square">
+
+                <img className="w-full h-full object-cover" src={boImage} />
+
+              </div>
+
+              <p className="relative confetti-button-text text-2xl mt-7">Click me!</p>
+
+            </button>
+
+          </div>
+
+          <div className="relative w-full h-[70%]">
+
+            <div style={{ transition: 'background-image 1.5s' }} className={`absolute w-full h-full left-0 aspect-portrait md:aspect-square md:w-3/4 md:left-[12.5%] lg:w-[50%] lg:left-[25%] xl:w-[40%] xl:left-[30%] bottom-0 bg-center`}>
+
+              <img className="w-full h-full object-contain" src={`${day ? coverImage : coverImageDark}`} />
 
             </div>
 
-            <p className="relative confetti-button-text text-2xl mt-7">Click me!</p>
-
-          </button>
-
-        </div>
-
-        <audio id="audio_tag" src={sound} />
-
-        <div className="relative w-full h-[70%]">
-
-          <div style={{ transition: 'background-image 1.5s' }} className={`absolute w-full h-full left-0 aspect-portrait md:aspect-square md:w-3/4 md:left-[12.5%] lg:w-[50%] lg:left-[25%] xl:w-[40%] xl:left-[30%] bottom-0 bg-center`}>
-
-            <img className="w-full h-full object-contain" src={`${day ? coverImage : coverImageDark}`} />
-
           </div>
+
+          <audio id="audio_tag" src={sound} />
 
         </div>
 
@@ -157,7 +163,7 @@ function App() {
           <div className="w-full p-4">
 
             <p className="mt-20 text-lg justify-start">
-              Happy Birthday my love. Grace is defined as undeserved favour. It is not earned and is freely given. Having you in my life and to be loved by you is the perfect example of grace in my life. You're important to so many people and few signed your card to show you how much they care. Keep scrollinh to see...
+              Happy Birthday my love. Grace is defined as undeserved favour. It is not earned and is freely given. Having you in my life and to be loved by you is the perfect example of grace. You are my heartbeat and I love you, forever and whatever comes after. You're important to so many people and few signed your card to show you how much they care. Keep scrolling to see...
             </p>
 
           </div>
@@ -167,7 +173,7 @@ function App() {
             {messages.map((item) => (
               <MessageItem openModal={() => openModal('xs', item.message, item.first_name)} key={item.id} message={item.message} name={item.first_name} />
             ))}
-            
+
           </div>
 
         </div>
