@@ -5,6 +5,8 @@ import Header from "./Components/Header";
 import { messages } from "./arrayList";
 import MessageItem from "./Components/MessageItem";
 import confetti from "canvas-confetti";
+import light from './Assets/Birthday-01.png';
+import dark from './Assets/Birthday-02.png';
 import coverImage from './Assets/Salome-01.png';
 import coverImageDark from './Assets/Salome-02.png';
 import boImage from './Assets/tst,small,507x507-pad,600x600,f8f8f8-Photoroom.png'
@@ -67,7 +69,7 @@ function App() {
     playSound()
     setTimeout(() => {
       setDisable(false)
-    }, 7000)
+    }, 3000)
   }
 
   const handleOpen = () => {
@@ -90,7 +92,7 @@ function App() {
 
 
   return (
-    <div className={`relative w-screen h-screen overflow-scroll ${day ? 'bg-[#cee5f0]' : 'bg-[#283038]'}`}>
+    <div className={`relative w-screen h-screen ${day ? 'bg-[#cee5f0]' : 'bg-[#283038]'}`}>
 
       <Dialog className={`${day ? 'bg-[#cee5f0]' : 'bg-[#283038]'}`} open={open} handler={handleOpen}>
         <DialogHeader>
@@ -121,8 +123,15 @@ function App() {
           <Header day={day} setDay={() => setDay(!day)} />
 
           <button onClick={shootConfetti} disabled={disable} className="relative w-48 h-24 mx-auto mt-28 md:mt-24 flex flex-row bg-green-500 rounded-lg border-2 border-gray-50 cursor-pointer hover:shadow-md">
-            <div className="relative h-full aspect-square bg-[url(./Assets/tst,small,507x507-pad,600x600,f8f8f8-Photoroom.png)] bg-cover"></div>
+            
+            <div className="relative h-full aspect-square">
+
+              <img className="w-full h-full object-cover" src={boImage} />
+
+            </div>
+
             <p className="relative confetti-button-text text-2xl mt-7">Click me!</p>
+
           </button>
 
         </div>
@@ -131,7 +140,10 @@ function App() {
 
         <div className="relative w-full h-[70%]">
 
-          <div style={{ transition: 'background-image 1s' }} className={`absolute w-full h-full left-0 aspect-portrait md:aspect-square md:w-3/4 md:left-[12.5%] lg:w-[50%] lg:left-[25%] xl:w-[40%] xl:left-[30%] bottom-0 bg-center bg-contain bg-no-repeat ${day ? 'bg-[url("./Assets/Salome-01.png")]' : 'bg-[url("./Assets/Salome-02.png")]'}`}>
+          <div style={{ transition: 'background-image 1.5s' }} className={`absolute w-full h-full left-0 aspect-portrait md:aspect-square md:w-3/4 md:left-[12.5%] lg:w-[50%] lg:left-[25%] xl:w-[40%] xl:left-[30%] bottom-0 bg-center`}>
+
+            <img className="w-full h-full object-contain" src={`${day ? coverImage : coverImageDark}`} />
+
           </div>
 
         </div>
@@ -143,15 +155,19 @@ function App() {
         <div className={`w-full md:w-4/5 lg:w-3/5 h-full mx-auto py-2 ${day ? 'text-gray-900' : 'text-gray-50'}`}>
 
           <div className="w-full p-4">
+
             <p className="mt-20 text-lg justify-start">
               Happy Birthday my love. Grace is defined as undeserved favour. It is not earned and is freely given. Having you in my life and to be loved by you is the perfect example of grace in my life. You're important to so many people and few signed your card to show you how much they care. Keep scrollinh to see...
             </p>
+
           </div>
 
           <div className="w-full h-auto mt-20 relative grid grid-flow-row-dense grid-cols-2 md:grid-cols-3">
+
             {messages.map((item) => (
               <MessageItem openModal={() => openModal('xs', item.message, item.first_name)} key={item.id} message={item.message} name={item.first_name} />
             ))}
+            
           </div>
 
         </div>
