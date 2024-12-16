@@ -46,8 +46,8 @@ export const messages = [
     },
     {
         "id": 10,
-        "first_name": "Wame",
-        "message": "To the best friend a person could ask for🥂Happy birthday baby❤️and don't worry, they are not gray hairs, they are wisdom highlights( believe me I know what I’m talking about😂)"
+        "first_name": "David",
+        "message": "The beauty of life is always in the various colourful personalities you meet at different stages whose simple encounter can add artistic layers to ones journey. Keep being the colour to our picture. Happy birthday Salz"
     },
     {
         "id": 11,
@@ -78,5 +78,15 @@ export const messages = [
         "id": 16,
         "first_name": "Precious",
         "message": "Happy Birthday Sally from the valley ❤️❤️youre one of the most wonderful souls I know! I am so grateful for all the moments  and the memories we have shared. Your unending support carried me through years of torture (BAF 200) and for that im forever grateful.Here’s to celebrating you today and always! Wishing you a year filled with love, joy, and all the good things life has to offer."
+    },
+    {
+        "id": 17,
+        "first_name": "Memory",
+        "message": "I met a warm welcoming woman the first time I met you and I appreciated that since it was the first time I was meeting David’s friends. Since then I’ve come to observe that you are someone who shows up for the people you love and care about. Wishing you a happiest birthday. May your day be filled with love, joy and happiness✨."
+    },
+    {
+        "id": 18,
+        "first_name": "James",
+        "message": "Thank God your parents met 😂, Happy birthday!"
     }
 ]
