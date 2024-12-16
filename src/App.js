@@ -103,7 +103,7 @@ function App() {
           </div>
         </DialogHeader>
         <DialogBody>
-          <div className="w-full h-72 md:h-80 flex flex-row">
+          <div className="w-full h-72 md:h-80 flex flex-row overflow-hidden">
             <div className={`relative w-full h-72 md:h-80 flex flex-col pt-4 px-4 text-left space-y-4 cursor-pointer ${day ? 'text-gray-900' : 'text-gray-50'}`}>
               <div className="w-full h-[90%] overflow-scroll">
                 <p className='text-sm md:text-base mt-1'>{message}</p>
