@@ -92,7 +92,7 @@ function App() {
 
 
   return (
-    <div className={`relative w-screen h-screen ${day ? 'bg-[#cee5f0]' : 'bg-[#283038]'}`}>
+    <div className={`w-screen h-screen ${day ? 'bg-[#cee5f0]' : 'bg-[#283038]'}`}>
 
       <Dialog className={`${day ? 'bg-[#cee5f0]' : 'bg-[#283038]'}`} open={open} handler={handleOpen}>
         <DialogHeader>
@@ -116,7 +116,7 @@ function App() {
         </DialogBody>
       </Dialog>
 
-      <div style={{ transition: 'background-image 1s' }} className={`relative w-screen h-screen bg-center bg-cover`}>
+      <div style={{ transition: 'background-image 1s' }} className={`relative top-0 w-screen h-screen bg-center bg-cover`}>
 
         <img className="w-full h-full object-cover" src={`${day ? light : dark}`} />
 
@@ -144,7 +144,7 @@ function App() {
 
             <div style={{ transition: 'background-image 1.5s' }} className={`absolute w-full h-full left-0 aspect-portrait md:aspect-square md:w-3/4 md:left-[12.5%] lg:w-[50%] lg:left-[25%] xl:w-[40%] xl:left-[30%] bottom-0 bg-center`}>
 
-              <img className="w-full h-full object-contain" src={`${day ? coverImage : coverImageDark}`} />
+              <img className="w-full h-full object-contain" alt={<div className="relative w-full h-full animate-pulse" />} src={`${day ? coverImage : coverImageDark}`} />
 
             </div>
 
